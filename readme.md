@@ -17,7 +17,6 @@ Install
 Example
 -------
 	var xmpp = require('simple-xmpp');
-	var argv = process.argv;
 
 	xmpp.onOnline(function() {
 		console.log('Yes, I\'m connected!');
