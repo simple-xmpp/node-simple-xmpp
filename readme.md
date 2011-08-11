@@ -8,11 +8,11 @@ Alpha - Should not be used in production
 
 Dependencies
 ------------
-`sudo apt-get install libexpat1 libexpat1-dev libicu-dev`
+	sudo apt-get install libexpat1 libexpat1-dev libicu-dev
 
 Install
 -------
-`npm install simple-xmpp`
+	npm install simple-xmpp
 
 Example
 -------
