@@ -18,15 +18,15 @@ Example
 -------
 	var xmpp = require('simple-xmpp');
 
-	xmpp.onOnline(function() {
+	xmpp.on('online', function() {
 		console.log('Yes, I\'m connected!');
 	});
 
-	xmpp.onChat(function(from, message) {
+	xmpp.on('chat', function(from, message) {
 		xmpp.send(from, 'echo: ' + message);
 	});
 
-	xmpp.onError(function(err) {
+	xmpp.on('error', function(err) {
 		console.error(err);
 	});
 
