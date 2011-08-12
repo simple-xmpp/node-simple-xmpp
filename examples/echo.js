@@ -33,11 +33,19 @@ xmpp.on('online', function() {
 
 xmpp.on('chat', function(from, message) {
 	xmpp.send(from, 'echo: ' + message);
+	xmpp.probe('arunoda.susiripala@gmail.com', function(state) {
+		console.log(state == xmpp.STATUS.ONLINE);
+	});
 });
 
 xmpp.on('error', function(err) {
 	console.error(err);
 });
+
+xmpp.on('buddy', function(jid, state) {
+	console.log("---------------%s is now '%s'", jid, state);
+});
+
 
 xmpp.connect({
     jid         : argv[2],
