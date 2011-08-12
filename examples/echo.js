@@ -43,5 +43,6 @@ xmpp.connect({
     jid         : argv[2],
     password    : argv[3],
     host        : 'talk.google.com',
+    host        : 'talk.google.com',
     port        : 5222
 });
