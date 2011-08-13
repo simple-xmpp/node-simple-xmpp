@@ -75,27 +75,26 @@ event where emits when state of the buddy on your chat list changes
 
 #### Send
 Send Chat Messages
-*Params*
 
-* to - Address to send (eg:- abc@gmail.com) 
-* message - message to be sent 
-
+	/**
+		@param to - Address to send (eg:- abc@gmail.com) 
+		@param message - message to be sent 
+	*/
+	
 	xmpp.send(to, message);
 
 #### Probe
 Probe the state of the buddy
-*Params*
 
-* jid - Buddy's id (eg:- abc@gmail.com)
-	
-* Callback Params*
-
-* state - State of the buddy.  value will be one of the following constant can be access via require('simple-xmpp').STATUS
+	/**
+		@param jid - Buddy's id (eg:- abc@gmail.com)
+		@param state -  State of the buddy.  value will be one of the following constant can be access via require('simple-xmpp').STATUS
 			AWAY - Buddy goes away
-		    DND - Buddy set its status as "Do Not Disturb" or  "Busy",
-		    ONLINE - Buddy comes online or available to chat
-		    OFFLINE - Buddy goes offline
-		    
+			DND - Buddy set its status as "Do Not Disturb" or  "Busy",
+			ONLINE - Buddy comes online or available to chat
+			OFFLINE - Buddy goes offline
+	*/
+
 	xmpp.probe(jid, function(state) {
 		
 	})
