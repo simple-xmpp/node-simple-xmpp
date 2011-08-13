@@ -1,6 +1,6 @@
 {
     "name": "simple-xmpp",
-    "version": "0.1.3beta",
+    "version": "0.1.4beta",
     "directories": {
         "lib": "./lib"
     },

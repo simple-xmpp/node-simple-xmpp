@@ -51,7 +51,7 @@ exports.testOnChat = function(test) {
 	conn.reset();
 	var from = 'hello@gmail.com';
 	var message = 'hi';
-	var stanza = new ltx.Element('message', { from: from, type: 'chat' });
+	var stanza = new ltx.Element('message', { from: from + '/dsdsds', type: 'chat' });
     stanza.c('body').t(message);
 
 	conn.mock('on').takes('online', function() {});
