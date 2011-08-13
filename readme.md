@@ -4,7 +4,7 @@ Simple High Level NodeJS XMPP Library
 
 Status
 ------
-Alpha - Should not be used in production
+Beta
 
 Dependencies
 ------------
