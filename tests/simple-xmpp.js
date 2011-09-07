@@ -1,3 +1,7 @@
+/*
+	Tests are writter using nodeunit
+*/
+
 var ltx = require('ltx');
 var horaa = require('horaa');
 var nodemock = require('nodemock');
