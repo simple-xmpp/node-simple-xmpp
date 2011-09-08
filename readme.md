@@ -71,6 +71,17 @@ event where emits when state of the buddy on your chat list changes
 		console.log('%s is in %s state', jid, state);
 	});
 
+#### Stanza
+access core stanza element when such received
+Fires for every incoming stanza
+
+	/**
+		@param stanza - the core object
+		xmpp.on('stanza', function(stanza) {
+			console.log(stanza);
+		});
+	*/
+
 ### Methods
 
 #### Send
@@ -98,6 +109,22 @@ Probe the state of the buddy
 	xmpp.probe(jid, function(state) {
 		
 	})
+
+### Fields
+Fields provided Additional Core functionalies
+
+#### xmpp.conn
+The underline connection object
+	
+	var xmpp = simpleXMPP.connect({});
+	xmpp.conn; // the connection object
+
+#### xmpp.Element 
+Underline XMPP Element class
+	
+	var xmpp = simpleXMPP.connect({});
+	xmpp.Element; // the connection objec	
+
 
 	
 
