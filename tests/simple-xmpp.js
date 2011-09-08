@@ -28,6 +28,7 @@ exports.testOnline = function(test) {
 	test.done();
 };
 
+
 exports.testError = function(test) {
 	
 	conn.reset();
@@ -71,6 +72,35 @@ exports.testOnChat = function(test) {
 	test.ok(conn.assert());
 	test.done();
 };
+
+exports.testOnChatWithStazaEvent = function(test) {
+	
+	test.expect(4);
+	conn.reset();
+	var from = 'hello@gmail.com';
+	var message = 'hi';
+	var stanza = new ltx.Element('message', { from: from + '/dsdsds', type: 'chat' });
+    stanza.c('body').t(message);
+
+	conn.mock('on').takes('online', function() {});
+	conn.mock('on').takes('stanza', function() {}).calls(1, [stanza]);
+	conn.mock('on').takes('error', function() {});
+ 
+	simpleXMPP.on('chat', function(f, m) {
+		test.equal(from, f);
+		test.equal(message, m);
+	});
+
+	simpleXMPP.on('stanza', function(stanza_) {
+		test.ok(stanza == stanza_);
+	});
+
+	simpleXMPP.connect({});
+
+	test.ok(conn.assert());
+	test.done();
+};
+
 
 exports.testOnBuddyAway = function(test) {
 	
