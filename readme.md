@@ -126,6 +126,5 @@ Underline XMPP Element class
 	xmpp.Element; // the connection objec	
 
 
-	
-
+### Guides
 
