@@ -2,10 +2,6 @@ Node Simple XMPP
 ================
 Simple High Level NodeJS XMPP Library
 
-Status
-------
-Beta
-
 Dependencies
 ------------
 	sudo apt-get install libexpat1 libexpat1-dev libicu-dev

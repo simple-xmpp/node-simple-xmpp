@@ -1,6 +1,6 @@
 {
     "name": "simple-xmpp",
-    "version": "0.1.5beta",
+    "version": "0.1.6",
     "directories": {
         "lib": "./lib"
     },
@@ -17,7 +17,6 @@
 
     "dependencies": {
         "node-xmpp": ">= 0.2.10",
-        "node-stringprep": ">= 0.0.5",
         "qbox": "0.1.3"
     },
 
