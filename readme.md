@@ -32,6 +32,8 @@ Example
 	    host        : 'talk.google.com',
 	    port        : 5222
 	});
+	xmpp.subscribe('your.friend@gmail.com');
+
 
 Documentation
 -------------
@@ -89,7 +91,11 @@ Send Chat Messages
 	*/
 	
 	xmpp.send(to, message);
-
+Send Friend requests
+	/**
+		@param to - Address to send (eg:- your.friend@gmail.com)
+	*/
+	xmpp.subscribe(to);
 #### Probe
 Probe the state of the buddy
 
