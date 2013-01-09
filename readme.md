@@ -91,7 +91,9 @@ Send Chat Messages
 	*/
 	
 	xmpp.send(to, message);
+	
 Send Friend requests
+
 	/**
 		@param to - Address to send (eg:- your.friend@gmail.com)
 	*/
