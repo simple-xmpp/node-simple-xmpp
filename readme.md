@@ -25,7 +25,11 @@ Example
 	xmpp.on('error', function(err) {
 		console.error(err);
 	});
-
+  xmpp.on('subscribe', function(from) {
+    if (from === 'a.friend@gmail.com') {
+      xmpp.acceptSubscription(from);
+      }
+  });
 	xmpp.connect({
 	    jid         : username@gmail.com,
 	    password    : password,
@@ -33,6 +37,8 @@ Example
 	    port        : 5222
 	});
 	xmpp.subscribe('your.friend@gmail.com');
+  // check for incoming subscription requests
+  xmpp.getRoster();
 
 
 Documentation
@@ -40,8 +46,8 @@ Documentation
 
 ### Events
 
-#### Online 
-event where emits when successfully connected 
+#### Online
+event where emits when successfully connected
 
 	xmpp.on('online', function() {
 		console.log('Yes, I\'m online');
@@ -86,18 +92,26 @@ Fires for every incoming stanza
 Send Chat Messages
 
 	/**
-		@param to - Address to send (eg:- abc@gmail.com) 
-		@param message - message to be sent 
+		@param to - Address to send (eg:- abc@gmail.com)
+		@param message - message to be sent
 	*/
-	
+
 	xmpp.send(to, message);
-	
+
 Send Friend requests
 
 	/**
 		@param to - Address to send (eg:- your.friend@gmail.com)
 	*/
 	xmpp.subscribe(to);
+
+Accept Friend requests
+
+	/**
+		@param to - Address to send (eg:- your.friend@gmail.com)
+	*/
+	xmpp.acceptSubscription(to);
+
 #### Probe
 Probe the state of the buddy
 
@@ -111,7 +125,7 @@ Probe the state of the buddy
 	*/
 
 	xmpp.probe(jid, function(state) {
-		
+
 	})
 
 ### Fields
@@ -119,15 +133,15 @@ Fields provided Additional Core functionalies
 
 #### xmpp.conn
 The underline connection object
-	
+
 	var xmpp = simpleXMPP.connect({});
 	xmpp.conn; // the connection object
 
-#### xmpp.Element 
+#### xmpp.Element
 Underline XMPP Element class
-	
+
 	var xmpp = simpleXMPP.connect({});
-	xmpp.Element; // the connection objec	
+	xmpp.Element; // the connection objec
 
 
 ### Guides
