@@ -25,20 +25,23 @@ Example
 	xmpp.on('error', function(err) {
 		console.error(err);
 	});
-  xmpp.on('subscribe', function(from) {
-    if (from === 'a.friend@gmail.com') {
-      xmpp.acceptSubscription(from);
-      }
-  });
+
+	xmpp.on('subscribe', function(from) {
+	if (from === 'a.friend@gmail.com') {
+		xmpp.acceptSubscription(from);
+		}
+	});
+
 	xmpp.connect({
 	    jid         : username@gmail.com,
 	    password    : password,
 	    host        : 'talk.google.com',
 	    port        : 5222
 	});
+
 	xmpp.subscribe('your.friend@gmail.com');
-  // check for incoming subscription requests
-  xmpp.getRoster();
+	// check for incoming subscription requests
+	xmpp.getRoster();
 
 
 Documentation
@@ -108,9 +111,23 @@ Send Friend requests
 Accept Friend requests
 
 	/**
-		@param to - Address to send (eg:- your.friend@gmail.com)
+		@param from - Address to accept (eg:- your.friend@gmail.com)
 	*/
-	xmpp.acceptSubscription(to);
+	xmpp.acceptSubscription(from);
+
+Unsubscribe Friend
+
+	/**
+		@param to - Address to unsubscribe (eg:- no.longer.friend@gmail.com)
+	*/
+	xmpp.unsubscribe(to);
+
+Accept unsubscription requests
+
+	/**
+		@param from - Address to accept (eg:- no.longer.friend@gmail.com)
+	*/
+	xmpp.acceptUnsubscription(from);
 
 #### Probe
 Probe the state of the buddy
