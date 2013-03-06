@@ -73,9 +73,11 @@ event where emits when state of the buddy on your chat list changes
 		    DND - Buddy set its status as "Do Not Disturb" or  "Busy",
 		    ONLINE - Buddy comes online or available to chat
 		    OFFLINE - Buddy goes offline
+		@param statusText - status message of the buddy (known as "custom message" in Gmail). 
+		                    `null` if the buddy has not specified any status text.
 	*/
-	xmpp.on('buddy', function(jid, state) {
-		console.log('%s is in %s state', jid, state);
+	xmpp.on('buddy', function(jid, state, statusText) {
+		console.log('%s is in %s state - %s', jid, state, statusText);
 	});
 
 #### Stanza
