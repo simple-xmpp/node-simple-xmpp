@@ -26,6 +26,12 @@ Example
 		console.error(err);
 	});
 
+	xmpp.on('subscribe', function(from) {
+	if (from === 'a.friend@gmail.com') {
+		xmpp.acceptSubscription(from);
+		}
+	});
+
 	xmpp.connect({
 	    jid         : username@gmail.com,
 	    password    : password,
@@ -33,13 +39,18 @@ Example
 	    port        : 5222
 	});
 
+	xmpp.subscribe('your.friend@gmail.com');
+	// check for incoming subscription requests
+	xmpp.getRoster();
+
+
 Documentation
 -------------
 
 ### Events
 
-#### Online 
-event where emits when successfully connected 
+#### Online
+event where emits when successfully connected
 
 	xmpp.on('online', function() {
 		console.log('Yes, I\'m online');
@@ -62,9 +73,11 @@ event where emits when state of the buddy on your chat list changes
 		    DND - Buddy set its status as "Do Not Disturb" or  "Busy",
 		    ONLINE - Buddy comes online or available to chat
 		    OFFLINE - Buddy goes offline
+		@param statusText - status message of the buddy (known as "custom message" in Gmail). 
+		                    `null` if the buddy has not specified any status text.
 	*/
-	xmpp.on('buddy', function(jid, state) {
-		console.log('%s is in %s state', jid, state);
+	xmpp.on('buddy', function(jid, state, statusText) {
+		console.log('%s is in %s state - %s', jid, state, statusText);
 	});
 
 #### Stanza
@@ -84,11 +97,39 @@ Fires for every incoming stanza
 Send Chat Messages
 
 	/**
-		@param to - Address to send (eg:- abc@gmail.com) 
-		@param message - message to be sent 
+		@param to - Address to send (eg:- abc@gmail.com)
+		@param message - message to be sent
 	*/
-	
+
 	xmpp.send(to, message);
+
+Send Friend requests
+
+	/**
+		@param to - Address to send (eg:- your.friend@gmail.com)
+	*/
+	xmpp.subscribe(to);
+
+Accept Friend requests
+
+	/**
+		@param from - Address to accept (eg:- your.friend@gmail.com)
+	*/
+	xmpp.acceptSubscription(from);
+
+Unsubscribe Friend
+
+	/**
+		@param to - Address to unsubscribe (eg:- no.longer.friend@gmail.com)
+	*/
+	xmpp.unsubscribe(to);
+
+Accept unsubscription requests
+
+	/**
+		@param from - Address to accept (eg:- no.longer.friend@gmail.com)
+	*/
+	xmpp.acceptUnsubscription(from);
 
 #### Probe
 Probe the state of the buddy
@@ -103,7 +144,7 @@ Probe the state of the buddy
 	*/
 
 	xmpp.probe(jid, function(state) {
-		
+
 	})
 
 ### Fields
@@ -111,15 +152,15 @@ Fields provided Additional Core functionalies
 
 #### xmpp.conn
 The underline connection object
-	
+
 	var xmpp = simpleXMPP.connect({});
 	xmpp.conn; // the connection object
 
-#### xmpp.Element 
+#### xmpp.Element
 Underline XMPP Element class
-	
+
 	var xmpp = simpleXMPP.connect({});
-	xmpp.Element; // the connection objec	
+	xmpp.Element; // the connection objec
 
 
 ### Guides
