@@ -50,21 +50,21 @@ Documentation
 ### Events
 
 #### Online
-event where emits when successfully connected
+Event emitted when successfully connected
 
 	xmpp.on('online', function() {
 		console.log('Yes, I\'m online');
 	});
 
 #### Chat
-event where emits when somebody sends a chat message to you
+Event emitted when somebody sends a chat message to you
 
 	xmpp.on('chat', function(from, message) {
 		console.log('%s says %s', from, message);
 	});
 
 #### Buddy
-event where emits when state of the buddy on your chat list changes
+Event emitted when state of the buddy on your chat list changes
 
 	/**
 		@param jid - is the id of buddy (eg:- hello@gmail.com)
@@ -76,6 +76,16 @@ event where emits when state of the buddy on your chat list changes
 	*/
 	xmpp.on('buddy', function(jid, state) {
 		console.log('%s is in %s state', jid, state);
+	});
+	
+#### Buddy capabilities
+Event emitted when a buddy's client capabilities are retrieved. Capabilities specify which additional
+features supported by the buddy's XMPP client (such as audio and video chat). See 
+[XEP-0115: Entity Capabilities](http://xmpp.org/extensions/xep-0115.html) for more information.
+
+	xmpp.on('buddyCapabilities', function(jid, data) {
+		// data contains clientName and features
+		console.log(data.features);
 	});
 
 #### Stanza
