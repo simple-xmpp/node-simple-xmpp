@@ -56,6 +56,13 @@ event where emits when successfully connected
 		console.log('Yes, I\'m online');
 	});
 
+#### Close
+event where the connection has been closed
+
+    xmpp.on('close', function() {
+        console.log('connection has been closed!');
+    });
+
 #### Chat
 event where emits when somebody sends a chat message to you
 
