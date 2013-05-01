@@ -59,9 +59,9 @@ event where emits when successfully connected
 #### Close
 event where the connection has been closed
 
-    xmpp.on('close', function() {
-        console.log('connection has been closed!');
-    });
+	xmpp.on('close', function() {
+		console.log('connection has been closed!');
+	});
 
 #### Chat
 event where emits when somebody sends a chat message to you
@@ -147,11 +147,11 @@ Accept unsubscription requests
 	xmpp.acceptUnsubscription(from);
 
 Set presence
-       /**
-                @param show - Your current presence state ['away', 'dnd', 'xa', 'chat']
-                @param status - (optional) free text as your status message
-       */
-       xmpp.setPresence('away', 'Out to lunch');
+	/**
+		@param show - Your current presence state ['away', 'dnd', 'xa', 'chat']
+ 		@param status - (optional) free text as your status message
+	*/
+	xmpp.setPresence('away', 'Out to lunch');
        
 #### Probe
 Probe the state of the buddy
