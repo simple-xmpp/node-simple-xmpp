@@ -63,6 +63,13 @@ event where emits when somebody sends a chat message to you
 		console.log('%s says %s', from, message);
 	});
 
+#### Group Chat
+event where emits when somebody sends a group chat message to you
+
+	xmpp.on('groupchat', function(conference, from, message, stamp) {
+		console.log('%s says %s on %s on %s at %s', from, message, conference, stamp.substr(0,9), stamp.substr(10));
+	});
+
 #### Buddy
 event where emits when state of the buddy on your chat list changes
 
@@ -97,11 +104,12 @@ Fires for every incoming stanza
 Send Chat Messages
 
 	/**
-		@param to - Address to send (eg:- abc@gmail.com)
+		@param to - Address to send (eg:- abc@gmail.com - room@conference.domain.tld)
 		@param message - message to be sent
+		@param group - if true, send the message in a group chat
 	*/
 
-	xmpp.send(to, message);
+	xmpp.send(to, message, group);
 
 Send Friend requests
 
