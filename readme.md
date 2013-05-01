@@ -147,6 +147,7 @@ Accept unsubscription requests
 	xmpp.acceptUnsubscription(from);
 
 Set presence
+
 	/**
 		@param show - Your current presence state ['away', 'dnd', 'xa', 'chat']
  		@param status - (optional) free text as your status message
