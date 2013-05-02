@@ -69,6 +69,13 @@ Event emitted when somebody sends a chat message to you
 	xmpp.on('chat', function(from, message) {
 		console.log('%s says %s', from, message);
 	});
+	
+#### Chat State
+event emitted when a buddys chatstate changes [ 'active', 'composing', 'paused', 'inactive', 'gone' ]
+
+	xmpp.on('chatstate', function(from, state) {
+		console.log('% is currently %s', from, state);
+	});
 
 #### Group Chat
 event where emits when somebody sends a group chat message to you
@@ -163,6 +170,14 @@ Set presence
  		@param status - (optional) free text as your status message
 	*/
 	xmpp.setPresence('away', 'Out to lunch');
+	
+Set chatstate
+
+	/**
+		@param to - The target JID (ie. person you are chatting with) to receive the chatstate
+		@param state - Your current chatstate [ 'active', 'composing', 'paused', 'inactive', 'gone' ]
+	*/
+	xmpp.setChatstate('user@host.com', 'composing');
        
 #### Probe
 Probe the state of the buddy
