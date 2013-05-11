@@ -220,8 +220,9 @@ Get vCard
 */
 xmpp.getVcard('user@host.com', function (vcard) {
 	console.log('user@host.com vcard: ', vcard);
-})  
-  
+});
+```
+
 #### Probe
 Probe the state of the buddy
 
