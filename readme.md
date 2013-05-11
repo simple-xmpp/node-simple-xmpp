@@ -218,7 +218,7 @@ Get vCard
 	@param buddy - The JID to use 
 	@param callback - The function to call when the vCard is retreived. The returned data will be a JSON object
 */
-xmpp.getVcard('user@host.com', function (vcard) {
+xmpp.getVCard('user@host.com', function (vcard) {
 	console.log('user@host.com vcard: ', vcard);
 });
 ```
