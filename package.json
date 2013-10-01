@@ -16,7 +16,7 @@
     ],
 
     "dependencies": {
-        "node-xmpp": "0.3.x",
+        "node-xmpp": "0.6.x",
         "qbox": "0.1.x"
     },
 
