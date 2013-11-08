@@ -142,7 +142,6 @@ Fires for every incoming stanza
 
 ### Methods
 
-#### Send
 Send Chat Messages
 
 ```javascript
@@ -223,7 +222,6 @@ xmpp.getVCard('user@host.com', function (vcard) {
 });
 ```
 
-#### Probe
 Probe the state of the buddy
 
 ```javascript
@@ -238,8 +236,18 @@ Probe the state of the buddy
 
 xmpp.probe(jid, function(state) {
 
-})
+});
 ```
+
+Disconnect session
+
+```javascript
+/**
+	no params
+*/
+
+xmpp.disconnect();
+
 
 ### Fields
 Fields provided Additional Core functionalies
