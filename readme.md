@@ -2,6 +2,8 @@ Node Simple XMPP
 ================
 Simple High Level NodeJS XMPP Library
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/simple-xmpp/node-simple-xmpp/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 Dependencies
 ------------
 	sudo apt-get install libexpat1 libexpat1-dev libicu-dev
