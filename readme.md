@@ -249,7 +249,7 @@ Disconnect session
 */
 
 xmpp.disconnect();
-
+```
 
 ### Fields
 Fields provided Additional Core functionalies
