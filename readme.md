@@ -118,9 +118,10 @@ xmpp.on('buddy', function(jid, state, statusText) {
 ```
 #### Group Buddy
 Event emitted when state of the buddy on group chat you recently joined changes
+
 ```javascript
-xmpp.on('groupBuddy', function(from, state, statusText) {
-	console.log('%s is in %s state - %s', from, state, statusText);
+xmpp.on('groupbuddy', function(conference, from, state, statusText) {
+	console.log('%s: %s is in %s state - %s',conference, from, state, statusText);
 });
 ```
 #### Buddy capabilities
