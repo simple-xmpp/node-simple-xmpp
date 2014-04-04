@@ -18,7 +18,8 @@ Example
 ```javascript
 var xmpp = require('simple-xmpp');
 
-xmpp.on('online', function() {
+xmpp.on('online', function(data) {
+	console.log('Connected with JID: ' + data.jid.user);
 	console.log('Yes, I\'m connected!');
 });
 
@@ -54,10 +55,10 @@ Documentation
 ### Events
 
 #### Online
-Event emitted when successfully connected
+Event emitted when successfully connected. Callback is passed an object containing information about the newly connected user.
 
 ```javascript
-xmpp.on('online', function() {
+xmpp.on('online', function(data) {
 	console.log('Yes, I\'m online');
 });
 ```
