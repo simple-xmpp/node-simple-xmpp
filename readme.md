@@ -18,7 +18,8 @@ Example
 ```javascript
 var xmpp = require('simple-xmpp');
 
-xmpp.on('online', function() {
+xmpp.on('online', function(data) {
+	console.log('Connected with JID: ' + data.jid.user);
 	console.log('Yes, I\'m connected!');
 });
 
@@ -54,10 +55,10 @@ Documentation
 ### Events
 
 #### Online
-Event emitted when successfully connected
+Event emitted when successfully connected. Callback is passed an object containing information about the newly connected user.
 
 ```javascript
-xmpp.on('online', function() {
+xmpp.on('online', function(data) {
 	console.log('Yes, I\'m online');
 });
 ```
@@ -116,7 +117,14 @@ xmpp.on('buddy', function(jid, state, statusText) {
 	console.log('%s is in %s state - %s', jid, state, statusText);
 });
 ```
-	
+#### Group Buddy
+Event emitted when state of the buddy on group chat you recently joined changes
+
+```javascript
+xmpp.on('groupbuddy', function(conference, from, state, statusText) {
+	console.log('%s: %s is in %s state - %s',conference, from, state, statusText);
+});
+```
 #### Buddy capabilities
 Event emitted when a buddy's client capabilities are retrieved. Capabilities specify which additional
 features supported by the buddy's XMPP client (such as audio and video chat). See 
@@ -249,7 +257,7 @@ Disconnect session
 */
 
 xmpp.disconnect();
-
+```
 
 ### Fields
 Fields provided Additional Core functionalies
