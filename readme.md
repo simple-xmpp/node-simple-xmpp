@@ -112,9 +112,11 @@ Event emitted when state of the buddy on your chat list changes
 			OFFLINE - Buddy goes offline
 	@param statusText - status message of the buddy (known as "custom message" in Gmail). 
 											`null` if the buddy has not specified any status text.
+											
+	@param resource is the last parameter of JID, which tells that the user is logged in via with device. (e.g mobile , Desktop )
 */
-xmpp.on('buddy', function(jid, state, statusText) {
-	console.log('%s is in %s state - %s', jid, state, statusText);
+xmpp.on('buddy', function(jid, state, statusText,resource) {
+	console.log('%s is in %s state - %s -%s', jid, state, statusText,resource);
 });
 ```
 #### Group Buddy
