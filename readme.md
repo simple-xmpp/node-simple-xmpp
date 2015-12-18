@@ -2,10 +2,6 @@ Node Simple XMPP
 ================
 Simple High Level NodeJS XMPP Library
 
-Dependencies
-------------
-	sudo apt-get install libexpat1 libexpat1-dev libicu-dev
-
 Install
 -------
 	npm install simple-xmpp
@@ -78,7 +74,7 @@ xmpp.on('chat', function(from, message) {
 	console.log('%s says %s', from, message);
 });
 ```
-	
+
 #### Chat State
 event emitted when a buddys chatstate changes [ 'active', 'composing', 'paused', 'inactive', 'gone' ]
 
@@ -108,9 +104,9 @@ Event emitted when state of the buddy on your chat list changes
 			DND - Buddy set its status as "Do Not Disturb" or	 "Busy",
 			ONLINE - Buddy comes online or available to chat
 			OFFLINE - Buddy goes offline
-	@param statusText - status message of the buddy (known as "custom message" in Gmail). 
+	@param statusText - status message of the buddy (known as "custom message" in Gmail).
 											`null` if the buddy has not specified any status text.
-											
+
 	@param resource is the last parameter of JID, which tells that the user is logged in via with device. (e.g mobile , Desktop )
 */
 xmpp.on('buddy', function(jid, state, statusText,resource) {
@@ -127,7 +123,7 @@ xmpp.on('groupbuddy', function(conference, from, state, statusText) {
 ```
 #### Buddy capabilities
 Event emitted when a buddy's client capabilities are retrieved. Capabilities specify which additional
-features supported by the buddy's XMPP client (such as audio and video chat). See 
+features supported by the buddy's XMPP client (such as audio and video chat). See
 [XEP-0115: Entity Capabilities](http://xmpp.org/extensions/xep-0115.html) for more information.
 
 ```javascript
@@ -209,7 +205,7 @@ Set presence
 */
 xmpp.setPresence('away', 'Out to lunch');
 ```
-	
+
 Set chatstate
 
 ```javascript
@@ -224,7 +220,7 @@ Get vCard
 
 ```javascript
 /*
-	@param buddy - The JID to use 
+	@param buddy - The JID to use
 	@param callback - The function to call when the vCard is retreived. The returned data will be a JSON object
 */
 xmpp.getVCard('user@host.com', function (vcard) {

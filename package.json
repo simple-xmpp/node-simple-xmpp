@@ -27,12 +27,11 @@
     ],
 
     "dependencies": {
-        "node-xmpp-client": "^1.0.0",
+        "node-xmpp-client": "^3.0.0",
         "qbox": "0.1.x"
     },
 
     "devDependencies": {
-        "ltx": ">= 0.0.5",
         "nodemock": ">= 0.2.13",
         "horaa": ">= 0.1.1alpha"
     },
