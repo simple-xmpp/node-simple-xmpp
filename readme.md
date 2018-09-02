@@ -26,8 +26,8 @@ xmpp.on('error', function(err) {
 });
 
 xmpp.on('subscribe', function(from) {
-if (from === 'a.friend@gmail.com') {
-	xmpp.acceptSubscription(from);
+	if (from === 'a.friend@gmail.com') {
+		xmpp.acceptSubscription(from);
 	}
 });
 
