@@ -31,10 +31,10 @@ xmpp.on('subscribe', function(from) {
 });
 
 xmpp.connect({
-	jid					: username@gmail.com,
-	password		: password,
-	host				: 'talk.google.com',
-	port				: 5222
+	jid: username@gmail.com,
+	password: password,
+	host: 'talk.google.com',
+	port: 5222
 });
 
 xmpp.subscribe('your.friend@gmail.com');
@@ -87,7 +87,8 @@ event where emits when somebody sends a group chat message to you
 
 ```javascript
 xmpp.on('groupchat', function(conference, from, message, stamp) {
-	console.log('%s says %s on %s on %s at %s', from, message, conference, stamp.substr(0,9), stamp.substr(10));
+	console.log('%s says %s on %s on %s at %s', 
+                from, message, conference, stamp.substr(0,9), stamp.substr(10));
 });
 ```
 
@@ -97,15 +98,17 @@ Event emitted when state of the buddy on your chat list changes
 ```javascript
 /**
 	@param jid - is the id of buddy (eg:- hello@gmail.com)
-	@param state - state of the buddy. value will be one of the following constant can be access via require('simple-xmpp').STATUS
+	@param state - state of the buddy. value will be one of the following constant can be access 
+                   via require('simple-xmpp').STATUS
 		AWAY - Buddy goes away
-		DND - Buddy set its status as "Do Not Disturb" or	 "Busy",
+		DND - Buddy set its status as "Do Not Disturb" or "Busy",
 		ONLINE - Buddy comes online or available to chat
 		OFFLINE - Buddy goes offline
 	@param statusText - status message of the buddy (known as "custom message" in Gmail).
-											`null` if the buddy has not specified any status text.
+                        `null` if the buddy has not specified any status text.
 
-	@param resource is the last parameter of JID, which tells that the user is logged in via with device. (e.g mobile , Desktop )
+	@param resource - is the last parameter of JID, which tells that the user is logged in via with device. 
+                      (e.g mobile , Desktop )
 */
 xmpp.on('buddy', function(jid, state, statusText, resource) {
 	console.log('%s is in %s state - %s -%s', jid, state, statusText, resource);
@@ -231,7 +234,8 @@ Probe the state of the buddy
 ```javascript
 /**
 	@param jid - Buddy's id (eg:- abc@gmail.com)
-	@param state -	State of the buddy.	 value will be one of the following constant can be access via require('simple-xmpp').STATUS
+	@param state -	State of the buddy.	 value will be one of the following constant can be access 
+                    via require('simple-xmpp').STATUS
 		AWAY - Buddy goes away
 		DND - Buddy set its status as "Do Not Disturb" or	 "Busy",
 		ONLINE - Buddy comes online or available to chat
