@@ -14,7 +14,6 @@
             "url": "http://www.opensource.org/licenses/mit-license.php"
         }
     ],
-
     "contributors": [
         {
             "name": "Nick Jennings",
@@ -25,20 +24,16 @@
             "email": "julien.breux@gmail.com"
         }
     ],
-
     "dependencies": {
         "node-xmpp-client": "^3.0.0",
         "qbox": "0.1.x"
     },
-
     "devDependencies": {
-        "nodemock": ">= 0.2.13",
-        "horaa": ">= 0.1.1alpha"
+        "horaa": "^0.1.2-alpha",
+        "nodemock": ">= 0.2.13"
     },
-
-    "repository" :
-    {
-        "type" : "git",
-        "url" : "git@github.com:arunoda/node-simple-xmpp.git"
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:arunoda/node-simple-xmpp.git"
     }
 }
