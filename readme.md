@@ -65,7 +65,7 @@ xmpp.on('close', function() {
 ```
 
 #### Chat
-Event emitted when somebody sends a chat message to you
+Event emitted when somebody sends a chat message to you (either a direct message or a private message from a MUC)
 
 ```javascript
 xmpp.on('chat', function(from, message) {
