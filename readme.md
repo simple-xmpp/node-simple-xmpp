@@ -1,3 +1,9 @@
+# DEPRECATED
+
+This project is deprecated. Please consider using [xmpp.js](https://github.com/simple-xmpp/node-simple-xmpp/issues/98).
+
+------
+
 # node-simple-xmpp
 
 Simple High Level NodeJS XMPP Library
